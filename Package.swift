@@ -1,11 +1,31 @@
-// swift-tools-version:5.10
+// swift-tools-version: 5.10
 import PackageDescription
 
 let package = Package(
     name: "CUDD",
-    products: [],
+    dependencies: [
+        .package(url: "https://github.com/ltentrup/CCUDD.git", from: "1.0.0")
+    ]
+)
+
+/*
+
+// swift-tools-version:5.3
+import PackageDescription
+
+let package: Package = Package(
+    name: "CUDD",
+    products: [ .library(name: "CUDD", targets: ["CUDD"]),],
     dependencies: [
         .package(url: "https://github.com/danielaisen/CCUDD.git", from: "1.0.0")
     ],
-    targets: []
+    targets: [
+        .target(
+            name: "CUDD",
+            dependencies: []),
+        .testTarget(
+            name: "CUDDTests",
+            dependencies: ["CUDD"]),
+    ]
 )
+*/
